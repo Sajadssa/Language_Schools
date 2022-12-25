@@ -1,0 +1,322 @@
+/* ریست html */
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen,
+    ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial,
+    sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* تعریف متغیرها */
+:root {
+  --primaryColor: #6d28d9;
+  --secondaryColor: #ede9fe;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #7c7c7c;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+  --mainRed: #db2777;
+  --bodyColor: #f6f6f6;
+}
+/* دادن استایل به بدنه سایت */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  outline-style: none;
+  background-color: #111927;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(162.55, 40%, 46%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 70%);
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+/* منوی پیمایش */
+
+.nav_container {
+  background-color: rgb(147, 147, 179);
+  width: 100%;
+  height: auto;
+  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: fixed;
+  z-index: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* لیست منوی پیمایش */
+.nav_container .nav_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  list-style-type: none;
+}
+/* آیتم های  لینک منو پیمایش */
+.nav_link .nav_item {
+  padding: 0 1rem;
+  float: right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* تگ a منوی پیمایش */
+.nav_link .nav_item a {
+  color: var(--mainWhite);
+  text-decoration: none;
+}
+
+/* منوی همبرگری */
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #dce2ec;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+  margin-right: 1rem;
+}
+
+.bar:hover {
+  color: aqua;
+}
+/* TOGGLER */
+
+.toggler {
+  cursor: pointer;
+}
+
+.nav_expanded .bar-one {
+  transform: rotate(-45deg) translate(-9px, 6px);
+  margin: 8px 0;
+}
+
+.nav_expanded .bar-two {
+  transform: translate(-20px);
+  opacity: 0;
+}
+
+.nav_expanded .bar-three {
+  transform: rotate(45deg) translate(-8px, -8px);
+  margin: 8px 0;
+}
+
+.bar:hover {
+  color: #03161d;
+}
+
+/* logo */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  box-shadow: 1px 2px 3px 3px rgba(53, 60, 151, 0.2);
+  border-radius: 50%;
+}
+/* subnav */
+/* The subnavigation menu */
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Add a blue background color to navigation links on hover */
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+  display: none;
+  position: absolute;
+  right: 35%;
+  background-color: rgb(51, 69, 126);
+  width: 170vw;
+
+  z-index: 1;
+}
+
+/* Style the subnav links */
+.subnav-content a {
+  width: 150vw;
+  float: right;
+  color: white;
+  text-decoration: none;
+  transition: 2s ease-in-out;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+  width: 100%;
+
+  color: rgba(13, 194, 240, 0.76);
+  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  text-align: right;
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  overflow: hidden;
+  width: 250px;
+  padding: 1rem;
+  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  transition: all 3s ease-in-out;
+}
+
+/* main */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 4rem;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+
+  margin-top: 2rem;
+  border-radius: 7px;
+}
+.main h3 {
+  font-family: "IranNastaliq", Tahoma, Sans-Serif;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  left: 50%;
+  bottom: 0;
+  color: rgba(161, 26, 155, 0.5);
+  margin: 0 auto;
+  text-shadow: 2px 3px 4px 2px rgba(170, 136, 136, 0.3);
+}
+
+/* استایل به فرم ورود */
+.log_title {
+  color: var(--mainWhite);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+.log_form_Container form {
+ display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: auto;
+  margin: 0 auto;
+
+  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.log_form_Container form label {
+  font-size: medium;
+  color: var(--mainWhite);
+  align-items: center;
+  margin: 0.7rem auto;
+}
+
+.log_form_Container form input {
+  font-size: 14px;
+  padding: 0.7rem;
+  border-radius: 12px;
+  outline-style: none;
+  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  width: 200px;
+}
+.btns {
+  padding: 1rem;
+  display: flex;
+  gap: 0.7rem;
+  
+}
+.btn {
+  box-shadow: 0 20px 120px rgba(1, 13, 125, 0.125);
+
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(199, 410, 88, 0.125);
+
+  border: 1px solid rgba(1, 130, 125, 0.125);
+  padding: 0.5rem;
+  border-radius: 7px;
+  color: var(--mainWhite);
+  font-size: 14px;
+  margin-top: .5rem;
+  width: 80px;
+  cursor: pointer;
+  
+}
+ 
+
