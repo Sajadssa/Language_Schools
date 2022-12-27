@@ -1,3 +1,22 @@
+<!-- دریافت اطلاعات ارسالی از سمت سرور در فرم اصلی -->
+
+<?php
+
+session_start();
+
+if (isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "برای دیدن این صفحه شما باید وارد سایت شوید";
+
+    header("location:Login.php");
+}
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header('location:Login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
@@ -20,6 +39,7 @@
 <body>
     <!-- header navigation -->
     <!-- header.header>nav.nav_container>ul.nav_link>li.nav_item*5>a -->
+
     <header>
         <nav class="nav_container">
 
@@ -35,84 +55,53 @@
             </div>
 
             <ul class="nav_link">
-                <li class="nav_item"><a href="#Home">خانه</a></li>
+                <li class="nav_item"><a href="Main.php">خانه</a>
+                </li>
                 <div class="subnav">
                     <button class="subnavbtn">دوره ها <i class="fa fa-caret-down"></i></button>
                     <div class="subnav-content">
-                        <a href="#English">زبان انگلیسی</a>
-                        <a href="#Germany">زبان آلمانی</a>
-                        <a href="#France">زبان فرانسه</a>
+                        <a href="English.php">زبان انگلیسی</a>
+                        <a href="Germany.php">زبان آلمانی</a>
+                        <a href="France.php">زبان فرانسه</a>
                     </div>
                 </div>
                 <li class="nav_item"><a href="About.php">درباره ما </a></li>
                 <li class=" nav_item"><a href="Contact.php"> ارتباط با ما</a></li>
 
-                <li class="nav_item user" <a href="#loginForm"> ورود</a></li>
+
             </ul>
 
 
         </nav>
     </header>
-    <!--  end of header navigation -->
-    <!-- main -->
-    <section id="Home">
+    <!-- end of header navigation -->
 
-        <main class="main">
-            <!----------------- banner--------------------------------- -->
-            <div class="banner">
-                <img src="./assets/images/banner.jpg" alt="banner" />
-                <!-- <h3 class="main h3"> Haniyeh Academy Languages</h3> -->
-            </div>
-        </main>
-    </section>
-    <!--  end of main -->
-    <!-- login form-->
-    <section id="loginForm">
+    
+    <?php
+    if (isset($_SESSION['success'])) : ?>
 
-        <div class="log_form_Container">
-            <form action="#">
-                <h1 class="log_title">فرم ورود</h1>
+    <div>
+        <h3>
+            <?php
+                echo $_SESSION['success'];
+                unset($_SESSION['success']);
+                ?>
 
-                <label for="user">نام کاربری
+        </h3>
+    </div>
 
-                </label>
-                <input type="text" name="username" id="user" Placeholder="نام کاربری" required>
+    <?php endif ?>
 
-                <label for="password">رمز عبور
+    <!-- اگر کاربر وارد سایت شد نام کاربری را در صفحه اصلی نشان می دهد -->
 
-                </label>
-                <input type="password" name="password" id="password" Placeholder=" رمز عبور" required>
-                <div class="btns">
+    <?php if (isset($_SESSION['username'])) :  ?>
 
-                    <button type="submit" class="btn input">ورود</button>
-                    <button type="button" class="btn newuser">عضویت </button>
-                    <i class="fa fa-close-alt"></i>
-                </div>
-
-            </form>
-        </div>
-    </section>
-    <!--end of login form  -->
-    <!-- english section -->
-    <section id="English">
-        <h1>english</h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum suscipit cupiditate dolores dicta veniam maiores
-        totam! Eligendi totam iste neque repellat sequi. Sapiente est quas voluptates eaque aut, nemo praesentium.
-    </section>
-    <!--  end of english section -->
-    <!-- Germany section -->
-    <section id="Germany">
-        <h1>Germany</h1>
-    </section>
-    <!--  end of Germany section -->
-    <!-- France section -->
-    <section id="France">
-        <h1>France</h1>
-    </section>
-    <!--  end of France section -->
+    <h3>خوش آمدید <strong><?php echo $_SESSION['username']; ?></strong></h3>
 
 
+    <button> <a href="index.php?logout='1'"></a></button>
 
+    <?php endif ?>
 </body>
 
 </html>

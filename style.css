@@ -7,6 +7,8 @@
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
 }
 /* تعریف متغیرها */
 :root {
@@ -23,27 +25,33 @@
 /* دادن استایل به بدنه سایت */
 html,
 body {
-  padding: 0;
-  margin: 0;
+ 
   box-sizing: border-box;
 
   outline-style: none;
-  background-color: #111927;
+  /* background-color: #111927;
   background-image: radial-gradient(
       at 47% 33%,
       hsl(162.55, 40%, 46%) 0,
       transparent 59%
     ),
     radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 70%);
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   overflow-x: hidden;
+  /* Background styles */
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.3)), url("assets/images/banner.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+  
 }
 /* منوی پیمایش */
 
 .nav_container {
   background-color: rgb(147, 147, 179);
   width: 100%;
-  height: auto;
+  height: 80px;
   box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
   border-radius: 5px;
   backdrop-filter: blur(15px) saturate(120%);
@@ -52,11 +60,13 @@ body {
   border-radius: 7px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
-  z-index: inherit;
+  z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  top: 0;
+  
 }
 /* لیست منوی پیمایش */
 .nav_container .nav_link {
@@ -81,6 +91,9 @@ body {
   color: var(--mainWhite);
   text-decoration: none;
 }
+.nav_container .nav_link .nav_item a :active{
+  color: aqua;
+}
 
 /* منوی همبرگری */
 .bar {
@@ -100,6 +113,7 @@ body {
 
 .toggler {
   cursor: pointer;
+  margin-left: 2rem;
 }
 
 .nav_expanded .bar-one {
@@ -126,7 +140,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 2rem;
+  margin-left: 1rem;
 }
 
 .logo img {
@@ -138,7 +152,7 @@ body {
 /* subnav */
 /* The subnavigation menu */
 .subnav {
-  float: left;
+  float: right;
   overflow: hidden;
 }
 
@@ -170,7 +184,7 @@ body {
 .subnav-content {
   display: none;
   position: absolute;
-  right: 35%;
+  right:40%;
   background-color: rgb(51, 69, 126);
   width: 170vw;
 
@@ -219,35 +233,65 @@ body {
   transition: all 3s ease-in-out;
 }
 
-/* main */
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* hero */
+/* blurring the image */
+    .hero {
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+ 
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  margin: 4rem;
+    /* Text styles */
+    text-align: center;
+    color: white;
+     /* ADD THIS LINE */
+
+    /* Background styles */
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.3)), url("assets/images/banner.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    
+    
 }
 
-.banner img {
-  width: 100%;
-  height: auto;
+.hero h1 {
+    /* Text styles */
+    font-size: 1.5em;
 
-  margin-top: 2rem;
-  border-radius: 7px;
-}
-.main h3 {
-  font-family: "IranNastaliq", Tahoma, Sans-Serif;
-  font-size: 3rem;
-  position: absolute;
-  top: 0;
-  right: 50%;
-  left: 50%;
-  bottom: 0;
-  color: rgba(161, 26, 155, 0.5);
-  margin: 0 auto;
-  text-shadow: 2px 3px 4px 2px rgba(170, 136, 136, 0.3);
+    /* Margins */
+    margin-top: 0;
+    margin-bottom: 0.5em;
 }
 
+.hero .btn {
+    /* Positioning and sizing */
+    display: block;
+    width: 200px;
+
+    /* Padding and margins */
+    padding: 1em;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Text styles */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+
+    /* Border styles */
+    border: 2px solid white;
+    border-radius: 20px;
+
+    /* Background styles */
+    background-color: rgba(147, 112, 219, 0.2);
+}
 /* استایل به فرم ورود */
 .log_title {
   color: var(--mainWhite);
@@ -256,22 +300,23 @@ body {
   font-weight: bold;
 }
 .log_form_Container form {
- display: none;
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 450px;
+  max-width: 50%;
   height: auto;
-  margin: 0 auto;
+  margin: 13% auto;
 
   box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
   border-radius: 5px;
   backdrop-filter: blur(15px) saturate(120%);
   -webkit-backdrop-filter: blur(16px) saturate(120%);
-  background-color: rgba(17, 25, 40, 0.3);
+  background-color: rgba(48, 22, 45, 0.3);
 
   border: 1px solid rgba(255, 255, 255, 0.125);
+  z-index: 0;
 }
 
 .log_form_Container form label {
@@ -316,7 +361,142 @@ body {
   margin-top: .5rem;
   width: 80px;
   cursor: pointer;
+transition: 1s ease-in-out;
   
 }
+ .log_footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  color: var(--mainWhite);
+}
+
+.log_footer>a{
+  text-decoration: none;
+  color: aqua;
+  
+  font-weight: bold;
+  font-size: 1rem;
+}
+.log_footer>a:hover{
+  color:black;
+}
+/* hero banner */
+.hero .btn:hover{
+   
+   box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
+   
+   animation: anim 1s  1s ease-in-out infinite;
+}
+@keyframes anim {
+   from{
+border: 2px solid rgba(3, 12, 18, 0.4);
+box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
+ background-color:rgba(145, 120, 150, 0.3);
+   } 
+  
+  
+
+  to{
+     background-color:rgba(0, 142, 0, 0.3);
+      
+  }
+}
  
+/* استایل به فرم ثبت نام */
+.reg_title {
+  color: var(--mainWhite);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+ .reg_form_Container form {
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 60%;
+  height: auto;
+  margin: 12% auto;
+
+  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.reg_form_Container form label {
+  font-size: medium;
+  color: var(--mainWhite);
+  align-items: center;
+  margin: 0.7rem auto;
+}
+
+.reg_form_Container form input {
+  font-size: 14px;
+  padding: 0.7rem;
+  border-radius: 12px;
+  outline-style: none;
+  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  width: 200px;
+}
+
+ .reg_form_desc{
+  display: flex;
+ }
+ /* about */
+.about_container {
+ display: flex;
+ justify-content: space-between;
+ gap: 2rem;
+ 
+ align-items: center;
+   max-width: 80%;
+  height: auto;
+   backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+  border-radius: 7px;
+  margin: 2rem auto;
+  padding: 1rem;
+  color: var(--mainWhite);
+  line-height: 2;
+  
+   
+
+}
+.about_title h1{
+  font-size: 1.9rem;
+  color: var(--mainWhite);
+  margin-top: 2.5rem;
+  padding: 1.2rem;
+ text-align: center;
+}
+.about_title h5{
+
+  color: var(--mainWhite);
+  
+  padding: .2rem;
+ text-align: center;
+}
+
+.about_img img{
+  width: 250px;
+  height: auto;
+   
+
+}
 
