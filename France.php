@@ -9,8 +9,14 @@
 </head>
 
 <body>
-    <?php include 'index.php' ?>;
+    <?php include 'NavBar.php' ?>
     <h1>france</h1>
 </body>
+<section class="hero">
+    <div class="hero-inner">
+
+
+    </div>
+</section>
 
 </html>

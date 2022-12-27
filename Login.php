@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php include 'index.php' ?>
+    <?php include 'NavBar.php' ?>
     <!-- login form-->
     <section id="loginForm">
 
@@ -50,7 +50,7 @@
         </div>
     </section>
 
-</body>
+
 </body>
 
 </html>

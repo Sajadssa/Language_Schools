@@ -11,7 +11,7 @@
 <body>
     <section id="about">
 
-        <!-- <?php include 'index.php' ?>; -->
+        <?php include 'NavBar.php' ?>
         <div class="about_title">
 
             <h1>درباره ما بیشتر بدانید</h1>

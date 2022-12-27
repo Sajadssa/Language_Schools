@@ -46,7 +46,7 @@
                 <li class="nav_item"><a href="About.php">درباره ما </a></li>
                 <li class=" nav_item"><a href="Contact.php"> ارتباط با ما</a></li>
 
-                <li class="nav_item user" onclick="openForm"><a href="Login.php"> ورود</a></li>
+               
             </ul>
 
 

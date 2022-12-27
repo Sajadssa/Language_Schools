@@ -9,8 +9,17 @@
 </head>
 
 <body>
-    <?php include 'index.php' ?>;
+    <?php include 'NavBar.php' ?>
     <h1>CONTACT</h1>
+    <!-- hero -->
+    <section class="hero">
+        <div class="hero-inner">
+
+
+        </div>
+    </section>
+
+
 </body>
 
 </html>

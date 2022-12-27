@@ -30,9 +30,7 @@ if (isset($_GET['logout'])) {
 
     <link rel="stylesheet" href="style.css">
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
 </head>
 
@@ -55,7 +53,7 @@ if (isset($_GET['logout'])) {
             </div>
 
             <ul class="nav_link">
-                <li class="nav_item"><a href="Main.php">خانه</a>
+                <li class="nav_item"><a href="index.php">خانه</a>
                 </li>
                 <div class="subnav">
                     <button class="subnavbtn">دوره ها <i class="fa fa-caret-down"></i></button>
@@ -75,20 +73,31 @@ if (isset($_GET['logout'])) {
         </nav>
     </header>
     <!-- end of header navigation -->
+    <!-- hero  -->
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>به آکادمی زبانهای خارجی هانیه خوش آمدید </h1>
+            <h2>باهم و درکنارهم برای موفقیت</h2>
 
-    
+
+            <a href="Login.php" class="btn">ورود</a>
+
+
+        </div>
+    </section>
+<!-- end of hero -->
     <?php
     if (isset($_SESSION['success'])) : ?>
 
-    <div>
-        <h3>
-            <?php
+        <div>
+            <h3>
+                <?php
                 echo $_SESSION['success'];
                 unset($_SESSION['success']);
                 ?>
 
-        </h3>
-    </div>
+            </h3>
+        </div>
 
     <?php endif ?>
 
@@ -96,10 +105,10 @@ if (isset($_GET['logout'])) {
 
     <?php if (isset($_SESSION['username'])) :  ?>
 
-    <h3>خوش آمدید <strong><?php echo $_SESSION['username']; ?></strong></h3>
+        <h3>خوش آمدید <strong><?php echo $_SESSION['username']; ?></strong></h3>
 
 
-    <button> <a href="index.php?logout='1'"></a></button>
+        <button> <a href="index.php?logout='1'"></a></button>
 
     <?php endif ?>
 </body>

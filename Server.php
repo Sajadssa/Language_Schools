@@ -16,9 +16,9 @@ $db=mysqli_connect('localhost','root','','language_schools') or die('اتصال 
 //ثبت کاربران در بانک اطلاعاتی
 //ارسال مقادیر متغییرها به سرور  هنگامی که کاربر در فرم ثبت نام مشخصات خود را ثبت می کند
 
-$username=mysqli_real_escape_string($db,$_POST['username']);
-$email = mysqli_real_escape_string($db, $_POST['email']);
-$password = mysqli_real_escape_string($db, $_POST['password']);
+$username=$_POST['username'];
+$email =$_POST['email'];
+$password = $_POST['password'];
 
 //ارزیابی اطلاعات ارسال شده توسط کاربر به سرور
 
@@ -58,11 +58,31 @@ if(count($errors)==0){
     $_SESSION['username']=$username;
     $_SESSION['success'] = "شما اکنون وارد شده اید ";
     //ورود به فرم اصلی
-    header('location:Main.php');
+    header('location:index.php');
 }
 
 
-
+// <?php
+// $Firstnames=$_POST["Firstname"];
+// $Lastnmaes=$_POST["Lastname"];
+// $Skill=$_POST["Skills"];
+// $Languages=$_POST["Language"];
+// //database
+// $conn=new Mysqli('localhost','root','','practice');
+//     if($conn->connect_error) {
+// 		die('Connection Faild   : '.$conn->connect_error);
+// 	}
+// else
+// {
+// 		$stmt=$conn->prepare("insert into message(Firstname,Lastname,Skills,Language)values(?,?,?,?)");
+// 		$stmt->bind_param("ssss",$Firstnames,$Lastnmaes,$Skill,$Languages);
+// 		$stmt->execute();
+// 		echo"Registation Successfully.";
+// 		$stmt->close();
+// 	    $conn->close();
+	
+// 	}
+// ?>
 
 
 

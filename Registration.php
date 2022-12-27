@@ -10,12 +10,12 @@
     <title>Registration</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
+
 </head>
 
 <body>
 
-<?php include'index.php'?>
+    <?php include 'NavBar.php' ?>
     <!-- login form-->
     <section id="Registration">
         <!-- Registration form-->
@@ -54,6 +54,13 @@
             </form>
         </div>
         <section>
+            <!-- hero -->
+            <section class="hero">
+                <div class="hero-inner">
+
+
+                </div>
+            </section>
 </body>
 
 </html>
