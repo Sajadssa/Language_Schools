@@ -86,31 +86,7 @@ if (isset($_GET['logout'])) {
         </div>
     </section>
 <!-- end of hero -->
-    <?php
-    if (isset($_SESSION['success'])) : ?>
-
-        <div>
-            <h3>
-                <?php
-                echo $_SESSION['success'];
-                unset($_SESSION['success']);
-                ?>
-
-            </h3>
-        </div>
-
-    <?php endif ?>
-
-    <!-- اگر کاربر وارد سایت شد نام کاربری را در صفحه اصلی نشان می دهد -->
-
-    <?php if (isset($_SESSION['username'])) :  ?>
-
-        <h3>خوش آمدید <strong><?php echo $_SESSION['username']; ?></strong></h3>
-
-
-        <button> <a href="index.php?logout='1'"></a></button>
-
-    <?php endif ?>
+     
 </body>
 
 </html>

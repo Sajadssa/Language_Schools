@@ -1,4 +1,4 @@
-<?php if(count($errors) > 0) : ?>
+<!-- <?php if(count($errors) > 0) : ?>
 
 <div>
     <?php foreach($errors as $error) : ?>
@@ -7,4 +7,4 @@
 
 
 </div>
-<?php endif; ?>
+<?php endif; ?> -->

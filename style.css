@@ -39,7 +39,7 @@ body {
   background-repeat: no-repeat; */
   overflow-x: hidden;
   /* Background styles */
-   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.3)), url("assets/images/banner.jpg");
+   background-image: linear-gradient(rgba(0, 0, 125, 0.5), rgba(14, 12, 125, 0.5),rgba(0, 0, 0, 0.3)), url("assets/images/banner.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -251,7 +251,7 @@ body {
      /* ADD THIS LINE */
 
     /* Background styles */
-   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.3)), url("assets/images/banner.jpg");
+   background-image: linear-gradient(rgba(42, 45, 110, 0.4), rgba(11, 8, 120, 0.5),rgba(45, 12, 111, 0.3)), url("assets/images/banner.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -309,13 +309,11 @@ body {
   height: auto;
   margin: 13% auto;
 
-  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
-  border-radius: 5px;
-  backdrop-filter: blur(15px) saturate(120%);
-  -webkit-backdrop-filter: blur(16px) saturate(120%);
-  background-color: rgba(48, 22, 45, 0.3);
-
-  border: 1px solid rgba(255, 255, 255, 0.125);
+   backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
   z-index: 0;
 }
 
@@ -339,6 +337,7 @@ body {
 
   border: 1px solid rgba(255, 255, 255, 0.125);
   width: 200px;
+  color:var(--mainWhite) ;
 }
 .btns {
   padding: 1rem;
@@ -351,9 +350,9 @@ body {
 
   backdrop-filter: blur(15px) saturate(120%);
   -webkit-backdrop-filter: blur(16px) saturate(120%);
-  background-color: rgba(199, 410, 88, 0.125);
+  background-color: rgba(12, 21, 198, 0.125);
 
-  border: 1px solid rgba(1, 130, 125, 0.125);
+  border: 1px solid rgba(1, 130, 225, 0.3);
   padding: 0.5rem;
   border-radius: 7px;
   color: var(--mainWhite);
@@ -366,7 +365,7 @@ transition: 1s ease-in-out;
 }
  .log_footer{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -423,13 +422,11 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
   height: auto;
   margin: 12% auto;
 
-  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
-  border-radius: 5px;
-  backdrop-filter: blur(15px) saturate(120%);
-  -webkit-backdrop-filter: blur(16px) saturate(120%);
-  background-color: rgba(17, 25, 40, 0.3);
-
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.125);
 }
 
 .reg_form_Container form label {
@@ -452,11 +449,30 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
 
   border: 1px solid rgba(255, 255, 255, 0.125);
   width: 200px;
+   color:var(--mainWhite) ;
  
 }
 
  .reg_form_desc{
   display: flex;
+ }
+ .alert-info{
+  width: 200px;
+  height:auto;
+  background-color: rgba(4, 44, 21, 0.185);
+  color: var(--mainWhite);
+ }
+
+ /*  style to error  */
+ .reg_form_Container form .error-msg{
+ 
+  margin: 10px 0;
+  display: block;
+  background-color: crimson;
+  color: var(--mainWhite);
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
  }
  /* about */
 .about_container {
