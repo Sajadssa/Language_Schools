@@ -1,37 +1,60 @@
 <?php
 session_start();
+include 'Server.php'; //افزودن کدهای مربوط به اتصال به دیتابیس
+include 'functions.php';
+include 'NavBar.php';
+$msg = "";
+$msgsuc = "";
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    //something was posted
+    $name = $_POST['name'];
+   
+    $password = $_POST['password'];
 
-require_once "Server.php";
-if (isset($_SESSION['user_id']) != "") {
-    header("Location: Main.php");
-}
+
+    if (!empty($name) && !empty($password) && !is_numeric($name)) {
 
 
-if (isset($_POST['login'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $password = mysqli_real_escape_string($conn, md5($_POST['password']));
+        //read from  database
+       
+
+        
+            $query = "select * from users where username='$name' limit 1 ";
 
 
-    if (strlen($password) < 6) {
-        $password_error = "رمز عبور نباید از 6 حرف کمترباشد";
-    }
+            $result=mysqli_query($con, $query);
+            if($result){
 
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '" . $name . "' and password = '" . md5($password) . "'");
-    if (!empty($result)) {
-        if ($row = mysqli_fetch_array($result)) {
-            $_SESSION['id_user'] = $row['uid'];
-            $_SESSION['username'] = $row['name'];
-            $_SESSION['password'] = $row['password'];
+                if ($result && mysqli_num_rows($result) > 0) {
 
-            header("Location: Main.php");
-        }
+                    $user_data = mysqli_fetch_assoc($result);
+
+                    if ($user_data['password']===$password) {
+                        
+                        $_SESSION['user_id'] =$user_data['user_id'];
+                        
+                        header("Location:index.php");
+                        die;
+                    }
+                }
+
+            }
+         
+       
+
+             
+            $msg = "<div class='danger' style='display:block;color:red;margin:6rem auto 0;text-align:center;'>  نام کاربری یا رمز عبور اشتباه است</div>";
+            echo $msg;
+        
     } else {
-        $error_message = 'Incorrect Email or Password!!!';
+
+        $msg = "<div class='danger' style='display:block;color:red;margin:5rem auto 0;text-align:center;'>  نام کاربری یا رمز عبور اشتباه است</div>";
+        echo $msg;
     }
 }
+
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
@@ -45,13 +68,16 @@ if (isset($_POST['login'])) {
 </head>
 
 <body>
-    <?php include 'NavBar.php' ?>
+
     <!-- login form-->
     <section id="loginForm">
 
         <div class="log_form_Container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <h1 class="log_title">فرم ورود</h1>
+
+
+
 
                 <label for="user">نام کاربری
 
@@ -64,7 +90,7 @@ if (isset($_POST['login'])) {
                 </label>
                 <input type="password" name="password" id="password" Placeholder=" رمز عبور" required>
                 <div class="btns">
-                    <span class="text-danger"><?php if (isset($password_error)) echo $password_error; ?></span>
+
                     <button type="submit" name="login" class="btn input">ورود</button>
 
 

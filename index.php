@@ -3,18 +3,10 @@
 <?php
 
 session_start();
+require_once 'functions.php';
+require_once'Server.php';
+$user_data = check_login($con);
 
-if (isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "برای دیدن این صفحه شما باید وارد سایت شوید";
-
-    header("location:Login.php");
-}
-
-if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['username']);
-    header('location:Login.php');
-}
 ?>
 
 <!DOCTYPE html>
@@ -76,17 +68,18 @@ if (isset($_GET['logout'])) {
     <!-- hero  -->
     <section class="hero">
         <div class="hero-inner">
+            <strong> کاربرگرامی  <?php echo $user_data['username'] ?>  </strong>
             <h1>به آکادمی زبانهای خارجی هانیه خوش آمدید </h1>
             <h2>باهم و درکنارهم برای موفقیت</h2>
-
+          
 
             <a href="Login.php" class="btn">ورود</a>
-
+<!-- <?php  print_r($user_data) ;?> -->
 
         </div>
     </section>
-<!-- end of hero -->
-     
+    <!-- end of hero -->
+  
 </body>
 
 </html>

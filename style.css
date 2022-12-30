@@ -1,3 +1,5 @@
+ 
+
 /* ریست html */
 * {
   box-sizing: border-box;
@@ -383,6 +385,13 @@ transition: 1s ease-in-out;
 .log_footer>a:hover{
   color:black;
 }
+.error{
+  background-color: #f2dede;
+  color: crimson;
+  padding: 10px;
+  width: 95%;
+  border-radius: 5px;
+}
 /* hero banner */
 .hero .btn:hover{
    
@@ -412,16 +421,16 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
   font-size: 25px;
   font-weight: bold;
 }
- .reg_form_Container form {
  
+ .reg_form_Container form {
+ position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 60%;
   height: auto;
-  margin: 12% auto;
-
+  margin: 120px auto 50px;
   backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.75);
@@ -476,12 +485,13 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
  }
  /* about */
 .about_container {
+  
  display: flex;
  justify-content: space-between;
  gap: 2rem;
  
  align-items: center;
-   max-width: 80%;
+   max-width: 90%;
   height: auto;
    backdrop-filter: blur(15px) saturate(120%);
   -webkit-backdrop-filter: blur(16px) saturate(120%);
@@ -495,11 +505,11 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
    
 
 }
-.about_title h1{
+ .about_title h1{
   font-size: 1.9rem;
   color: var(--mainWhite);
-  margin-top: 2.5rem;
-  padding: 1.2rem;
+  margin-top: 4rem;
+  padding: 1.5rem;
  text-align: center;
 }
 .about_title h5{
@@ -510,10 +520,7 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
  text-align: center;
 }
 
-.about_img img{
-  width: 250px;
-  height: auto;
-   
 
-}
 
+/* courses */
+ 

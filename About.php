@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -41,14 +42,12 @@
                     میباشد که طبق ساعات و روز مورد نظر زبان آموز استاد با وی هماهنگ میشود وکلاسها را برای وی برنامه ریزی
                     میکند.
 
-                    لازم به ذکر است آکادمی زبان ساینا نتیجه حاصل از این دوره ها را برابر با نتیجه دوره های حضوری میداند
-                    و تمامی زبان آموزان شرکت کننده در این دوره ها از روند دوره ها و کلاس های آموزش از راه دور خود ابراز
-                    رضایت و خرسندی میکنند.
+                    
                 </p>
             </div>
             <div class="about_img">
-                <img src="./assets/images/About_Hany.png" alt="عکس یافت نشد">
-                <img src="./assets/images/about_banner.png" alt="عکس یافت نشد">
+                <img style="width: 550px;" src="./assets/images/about_banner.png" alt="عکس یافت نشد">
+               
             </div>
 
 
@@ -58,12 +57,12 @@
         </div>
 
     </section>
-    <section class="hero">
+    <!-- <section class="hero">
         <div class="hero-inner">
 
 
         </div>
-    </section>
+    </section> -->
 </body>
 
 </html>
