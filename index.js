@@ -1,8 +1,4 @@
-// const newUser=document.querySelector('.newuser');
-// const showRegister = document.querySelector('.reg_form_Container');
-// function show(){
-//     showRegister.style.display="block";
-// };
+document.getElementById('image').onchange=function(){
 
-// newUser.addEventListener('click',show)
-    
+    document.getElementById('form').submit();
+}

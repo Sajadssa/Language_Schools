@@ -7,58 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>France</title>
 
-    <style>
-        table {
 
-            width: 50%;
-            z-index: 1;
-            border-collapse: collapse;
-            color: black;
-            margin: 4rem auto;
-            padding: 1rem;
-
-            border: 1px solid white;
-            backdrop-filter: blur(3px) saturate(70%);
-            -webkit-backdrop-filter: blur(5px) saturate(1%);
-            background-color: rgba(17, 25, 40, 0.3);
-
-            font-size: 12px;
-
-        }
-
-        td:hover {
-            background-color: rgba(1, 2, 111, 0.5);
-        }
-
-        table,
-        th,
-        td,
-        tr,
-        thead {
-            border: 1px solid white;
-            font-size: 14px;
-            color: white;
-
-
-        }
-
-        th {
-            background-color: rgba(0, 0, 0, 0.6)
-        }
-
-        td {
-            padding: 0 .5rem;
-        }
-    </style>
-
-    </style>
 </head>
 
 <body>
     <?php include 'NavBar.php' ?>
-    <h1 class="about_title">Germany</h1>
+
     <section class="hero">
         <div class="hero-inner">
+            <h1>دوره های زبان آلمانی</h1>
+
             <!-- table -->
             <div class="container-bcontent">
 
@@ -95,6 +53,8 @@
                 </table>
 
             </div>
+            <a href="UserPanel.php" style="text-decoration: none;color:white;"><button class="btn">ثبت نام</button> </a>
+
 
         </div>
     </section>

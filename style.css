@@ -46,6 +46,9 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment:fixed;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
   
 }
 /* منوی پیمایش */
@@ -267,7 +270,7 @@ body {
     font-size: 1.5em;
 
     /* Margins */
-    margin-top: 0;
+    margin-top: 3.5rem;
     margin-bottom: 0.5em;
 }
 
@@ -519,8 +522,130 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
   padding: .2rem;
  text-align: center;
 }
+/* tables */
 
 
+    table {
 
-/* courses */
+            width: 50%;
+            z-index: 1;
+            border-collapse: collapse;
+            color: black;
+            margin: 4rem auto;
+            padding: 1rem;
+
+            border: 1px solid white;
+            backdrop-filter: blur(3px) saturate(70%);
+            -webkit-backdrop-filter: blur(5px) saturate(1%);
+            background-color: rgba(17, 25, 40, 0.3);
+
+            font-size: 12px;
+
+        }
+
+        td:hover {
+            background-color: rgba(1, 2, 111, 0.5);
+        }
+
+        table,
+        th,
+        td,
+        tr,
+        thead {
+            border: 1px solid white;
+            font-size: 14px;
+            color: white;
+
+
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.6)
+        }
+
+        td {
+            padding: 0 .2rem;
+        }
+
+/* user panel */
+#userpanel{
+width: 70%;
+height: 100%;
+backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+  border-radius: 7px;
+    margin: 6rem auto 0;
+  padding: 2rem;
+
+}
+
+.user_profile{
+  
+  display: flex;
+  justify-content:center;
+  gap: .5rem;
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 45, 89, 0.3);
+  border-radius: 7px;
+  padding: .7rem;
+  
+}
+
+.user_profile form{
+width: 100%;
+ height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .5rem;
+
  
+  
+  
+}
+ 
+
+
+.user_profile form input{
+ font-size: 14px;
+  padding: 0.7rem;
+  border-radius: 12px;
+  outline-style: none;
+  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  width: 200px;
+   color:var(--mainWhite) ;
+
+}
+ 
+.user_profile span{
+  color: white;
+}
+.user_profile #course{
+box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  width: 200px;
+
+  color: var(--mainWhite);
+  padding: .2rem;
+}
+
+#userpanel .container-bcontent .table{
+  margin-bottom: 10rem;
+   
+}
+
+
+

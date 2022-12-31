@@ -21,6 +21,7 @@ if($result && mysqli_num_rows($result) > 0){
 
        
  }
+ 
 //  redirect to login page
  header("Location:Login.php");
  die;
