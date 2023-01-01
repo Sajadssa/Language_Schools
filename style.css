@@ -1,5 +1,3 @@
- 
-
 /* ریست html */
 * {
   box-sizing: border-box;
@@ -27,7 +25,6 @@
 /* دادن استایل به بدنه سایت */
 html,
 body {
- 
   box-sizing: border-box;
 
   outline-style: none;
@@ -41,15 +38,16 @@ body {
   background-repeat: no-repeat; */
   overflow-x: hidden;
   /* Background styles */
-   background-image: linear-gradient(rgba(0, 0, 125, 0.5), rgba(14, 12, 125, 0.5),rgba(0, 0, 0, 0.3)), url("assets/images/banner.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-  
+  background-image: linear-gradient(
+      rgba(0, 0, 125, 0.5),
+      rgba(14, 12, 125, 0.5),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url("assets/images/banner.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 /* منوی پیمایش */
 
@@ -71,7 +69,6 @@ body {
   justify-content: center;
   align-items: center;
   top: 0;
-  
 }
 /* لیست منوی پیمایش */
 .nav_container .nav_link {
@@ -96,7 +93,7 @@ body {
   color: var(--mainWhite);
   text-decoration: none;
 }
-.nav_container .nav_link .nav_item a :active{
+.nav_container .nav_link .nav_item a :active {
   color: aqua;
 }
 
@@ -189,7 +186,7 @@ body {
 .subnav-content {
   display: none;
   position: absolute;
-  right:40%;
+  right: 40%;
   background-color: rgb(51, 69, 126);
   width: 170vw;
 
@@ -240,62 +237,65 @@ body {
 
 /* hero */
 /* blurring the image */
-    .hero {
-    /* Sizing */
-    width: 100vw;
-    height: 100vh;
- 
-    /* Flexbox stuff */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero {
+  /* Sizing */
+  width: 100vw;
+  height: 100vh;
 
-    /* Text styles */
-    text-align: center;
-    color: white;
-     /* ADD THIS LINE */
+  /* Flexbox stuff */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    /* Background styles */
-   background-image: linear-gradient(rgba(42, 45, 110, 0.4), rgba(11, 8, 120, 0.5),rgba(45, 12, 111, 0.3)), url("assets/images/banner.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    
-    
+  /* Text styles */
+  text-align: center;
+  color: white;
+  /* ADD THIS LINE */
+
+  /* Background styles */
+  background-image: linear-gradient(
+      rgba(42, 45, 110, 0.4),
+      rgba(11, 8, 120, 0.5),
+      rgba(45, 12, 111, 0.3)
+    ),
+    url("assets/images/banner.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .hero h1 {
-    /* Text styles */
-    font-size: 1.5em;
+  /* Text styles */
+  font-size: 1.5em;
 
-    /* Margins */
-    margin-top: 3.5rem;
-    margin-bottom: 0.5em;
+  /* Margins */
+  margin-top: 3.5rem;
+  margin-bottom: 0.5em;
 }
 
 .hero .btn {
-    /* Positioning and sizing */
-    display: block;
-    width: 200px;
+  /* Positioning and sizing */
+  display: block;
+  width: 200px;
 
-    /* Padding and margins */
-    padding: 1em;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
+  /* Padding and margins */
+  padding: 1em;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 
-    /* Text styles */
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
+  /* Text styles */
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
 
-    /* Border styles */
-    border: 2px solid white;
-    border-radius: 20px;
+  /* Border styles */
+  border: 2px solid white;
+  border-radius: 20px;
 
-    /* Background styles */
-    background-color: rgba(147, 112, 219, 0.2);
+  /* Background styles */
+  background-color: rgba(147, 112, 219, 0.2);
 }
 /* استایل به فرم ورود */
 .log_title {
@@ -305,7 +305,6 @@ body {
   font-weight: bold;
 }
 .log_form_Container form {
- 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -314,11 +313,11 @@ body {
   height: auto;
   margin: 13% auto;
 
-   backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.75);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
   z-index: 0;
 }
 
@@ -342,13 +341,12 @@ body {
 
   border: 1px solid rgba(255, 255, 255, 0.125);
   width: 200px;
-  color:var(--mainWhite) ;
+  color: var(--mainWhite);
 }
 .btns {
   padding: 1rem;
   display: flex;
   gap: 0.7rem;
-  
 }
 .btn {
   box-shadow: 0 20px 120px rgba(1, 13, 125, 0.125);
@@ -362,13 +360,12 @@ body {
   border-radius: 7px;
   color: var(--mainWhite);
   font-size: 14px;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   width: 80px;
   cursor: pointer;
-transition: 1s ease-in-out;
-  
+  transition: 1s ease-in-out;
 }
- .log_footer{
+.log_footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -378,17 +375,17 @@ transition: 1s ease-in-out;
   color: var(--mainWhite);
 }
 
-.log_footer>a{
+.log_footer > a {
   text-decoration: none;
   color: aqua;
-  
+
   font-weight: bold;
   font-size: 1rem;
 }
-.log_footer>a:hover{
-  color:black;
+.log_footer > a:hover {
+  color: black;
 }
-.error{
+.error {
   background-color: #f2dede;
   color: crimson;
   padding: 10px;
@@ -396,27 +393,23 @@ transition: 1s ease-in-out;
   border-radius: 5px;
 }
 /* hero banner */
-.hero .btn:hover{
-   
-   box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
-   
-   animation: anim 1s  1s ease-in-out infinite;
+.hero .btn:hover {
+  box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
+
+  animation: anim 1s 1s ease-in-out infinite;
 }
 @keyframes anim {
-   from{
-border: 2px solid rgba(3, 12, 18, 0.4);
-box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
- background-color:rgba(145, 120, 150, 0.3);
-   } 
-  
-  
+  from {
+    border: 2px solid rgba(3, 12, 18, 0.4);
+    box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
+    background-color: rgba(145, 120, 150, 0.3);
+  }
 
-  to{
-     background-color:rgba(0, 142, 0, 0.3);
-      
+  to {
+    background-color: rgba(0, 142, 0, 0.3);
   }
 }
- 
+
 /* استایل به فرم ثبت نام */
 .reg_title {
   color: var(--mainWhite);
@@ -424,9 +417,9 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
   font-size: 25px;
   font-weight: bold;
 }
- 
- .reg_form_Container form {
- position: relative;
+
+.reg_form_Container form {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -435,10 +428,10 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
   height: auto;
   margin: 120px auto 50px;
   backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.75);
-    border-radius: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.125);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.125);
 }
 
 .reg_form_Container form label {
@@ -461,23 +454,21 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
 
   border: 1px solid rgba(255, 255, 255, 0.125);
   width: 200px;
-   color:var(--mainWhite) ;
- 
+  color: var(--mainWhite);
 }
 
- .reg_form_desc{
+.reg_form_desc {
   display: flex;
- }
- .alert-info{
+}
+.alert-info {
   width: 200px;
-  height:auto;
+  height: auto;
   background-color: rgba(4, 44, 21, 0.185);
   color: var(--mainWhite);
- }
+}
 
- /*  style to error  */
- .reg_form_Container form .error-msg{
- 
+/*  style to error  */
+.reg_form_Container form .error-msg {
   margin: 10px 0;
   display: block;
   background-color: crimson;
@@ -485,18 +476,17 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
   border-radius: 5px;
   font-size: 20px;
   padding: 10px;
- }
- /* about */
+}
+/* about */
 .about_container {
-  
- display: flex;
- justify-content: space-between;
- gap: 2rem;
- 
- align-items: center;
-   max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+  align-items: center;
+  max-width: 90%;
   height: auto;
-   backdrop-filter: blur(15px) saturate(120%);
+  backdrop-filter: blur(15px) saturate(120%);
   -webkit-backdrop-filter: blur(16px) saturate(120%);
   background-color: rgba(17, 25, 40, 0.3);
   border-radius: 7px;
@@ -504,112 +494,92 @@ box-shadow: 5px 20px 120px rgba(140, 0, 112, 0.07);
   padding: 1rem;
   color: var(--mainWhite);
   line-height: 2;
-  
-   
-
 }
- .about_title h1{
+.about_title h1 {
   font-size: 1.9rem;
   color: var(--mainWhite);
   margin-top: 4rem;
   padding: 1.5rem;
- text-align: center;
+  text-align: center;
 }
-.about_title h5{
-
+.about_title h5 {
   color: var(--mainWhite);
-  
-  padding: .2rem;
- text-align: center;
+
+  padding: 0.2rem;
+  text-align: center;
 }
 /* tables */
 
+table {
+  width: 65%;
+  z-index: 1;
+  border-collapse: collapse;
+  color: black;
+  margin: 0 auto;
+  padding: 1rem;
 
-    table {
+  border: 1px solid white;
+  backdrop-filter: blur(3px) saturate(70%);
+  -webkit-backdrop-filter: blur(5px) saturate(1%);
+  background-color: rgba(17, 25, 40, 0.3);
 
-            width: 50%;
-            z-index: 1;
-            border-collapse: collapse;
-            color: black;
-            margin: 4rem auto;
-            padding: 1rem;
+  font-size: 13px;
+}
 
-            border: 1px solid white;
-            backdrop-filter: blur(3px) saturate(70%);
-            -webkit-backdrop-filter: blur(5px) saturate(1%);
-            background-color: rgba(17, 25, 40, 0.3);
-
-            font-size: 12px;
-
-        }
-
-        td:hover {
+/* td:hover {
             background-color: rgba(1, 2, 111, 0.5);
-        }
+        } */
 
-        table,
-        th,
-        td,
-        tr,
-        thead {
-            border: 1px solid white;
-            font-size: 14px;
-            color: white;
+table,
+th,
+td,
+tr,
+thead {
+  border: 1px solid white;
+  font-size: 13px;
+  color: white;
+}
 
+th {
+  background-color: rgba(0, 0, 0, 0.6);
+}
 
-        }
-
-        th {
-            background-color: rgba(0, 0, 0, 0.6)
-        }
-
-        td {
-            padding: 0 .2rem;
-        }
+td {
+  padding: 0 0.2rem;
+}
 
 /* user panel */
-#userpanel{
-width: 70%;
-height: 100%;
-backdrop-filter: blur(15px) saturate(120%);
+#userpanel {
+  width: 80%;
+  height: 100%;
+  backdrop-filter: blur(15px) saturate(120%);
   -webkit-backdrop-filter: blur(16px) saturate(120%);
   background-color: rgba(17, 25, 40, 0.3);
   border-radius: 7px;
-    margin: 6rem auto 0;
+  margin: 6rem auto 0;
   padding: 2rem;
-
 }
 
-.user_profile{
-  
+.user_profile {
   display: flex;
-  justify-content:center;
-  gap: .5rem;
-  backdrop-filter: blur(15px) saturate(120%);
-  -webkit-backdrop-filter: blur(16px) saturate(120%);
-  background-color: rgba(17, 45, 89, 0.3);
+  justify-content: center;
+  gap: 0.5rem;
+
   border-radius: 7px;
-  padding: .7rem;
-  
+  padding: 0.7rem;
 }
 
-.user_profile form{
-width: 100%;
- height: auto;
+.user_profile form {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: .5rem;
-
- 
-  
-  
+  justify-content: space-evenly;
+  gap: 0.5rem;
 }
- 
 
-
-.user_profile form input{
- font-size: 14px;
+.user_profile form input {
+  font-size: 14px;
   padding: 0.7rem;
   border-radius: 12px;
   outline-style: none;
@@ -621,15 +591,14 @@ width: 100%;
 
   border: 1px solid rgba(255, 255, 255, 0.125);
   width: 200px;
-   color:var(--mainWhite) ;
-
+  color: var(--mainWhite);
 }
- 
-.user_profile span{
+
+.user_profile span {
   color: white;
 }
-.user_profile #course{
-box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
+.user_profile #course {
+  box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
 
   backdrop-filter: blur(15px) saturate(120%);
   -webkit-backdrop-filter: blur(16px) saturate(120%);
@@ -639,13 +608,7 @@ box-shadow: 0 20px 120px rgba(0, 0, 0, 0.07);
   width: 200px;
 
   color: var(--mainWhite);
-  padding: .2rem;
+  padding: 0.2rem;
 }
-
-#userpanel .container-bcontent .table{
-  margin-bottom: 10rem;
-   
-}
-
-
+ 
 

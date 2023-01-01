@@ -9,12 +9,15 @@ $query = "select * from Courses";
 $results = mysqli_query($con, $query);
 
 
+
+
+
 //update 
-
-if (isset($_POST['update'])) {
-
-    $id = $user_data['id'];
-
+if (isset($_GET['update'])) {
+    
+    
+     $id = $user_data['id'];
+echo $id;
 
 
     $query = "UPDATE users set  date_of_birth= '$_POST[date_of_birth]', education='$_POST[education]', national_code='$_POST[ncode]' where id='$id'";
@@ -29,6 +32,7 @@ if (isset($_POST['update'])) {
         echo '<script type="text/javascript">alert(" اطلاعات ویرایش نشد   ") </script>';
     }
 }
+
 // load data in select option
 $select = "select * from courses ";
 
@@ -42,13 +46,27 @@ if (isset($_POST['register'])) {
 
     // insert into database and table register
 
-    $insert = "INSERT INTO registration(user_id,id_Crs) VALUES ('$id','$id_crs')";
+    $insert = "INSERT INTO registration(id,id_Crs) VALUES ('$id','$id_crs')";
     if (mysqli_query($con, $insert)) {
-        $message = "Registration";
+        $message = "ثبت نام شما با موفقیت انجام شد";
     } else {
-        $message = "Error: registering failed $insert." . mysqli_error($con);
+        $message = "خطا در ثبت اطلاعات $insert." . mysqli_error($con);
     }
 }
+
+// delete from table registration
+
+if (isset($_GET['id'])) {
+    // echo $_GET['id'];
+    $id = $_GET['id'];
+    $delete = mysqli_query($con, "DELETE FROM `registration` WHERE id_Reg='$id'");
+    header("Location:UserPanel.php");
+    die;
+}
+
+
+
+
 
 
 
@@ -123,6 +141,37 @@ if (isset($_POST['register'])) {
             cursor: pointer;
 
         }
+
+        .container-bcontent .table tbody tr.table-dark td a.update i {
+            color: rgba(46, 25, 78, 0.5);
+            text-decoration: none;
+            color: var(--mainWhite);
+            padding: 0.5rem;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+            transition: .4s ease-in-out;
+        }
+
+        .container-bcontent .table tbody tr.table-dark td a.update i:hover {
+        color: rgba(2, 5, 255, 0.5);
+        }
+
+        /* style btn delete in table */
+        .container-bcontent .table tbody tr.table-dark td a.delete i  {
+            color: rgba(255, 0, 0, 0.5);
+            text-decoration: none;
+            color: #fff;
+            padding: 0.5rem;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+            transition: .4s ease-in-out;
+        }
+
+        .container-bcontent .table tbody tr.table-dark td a.delete i:hover {
+            color: crimson;
+        }
     </style>
 </head>
 
@@ -155,17 +204,18 @@ if (isset($_POST['register'])) {
                         <?php } ?>
                     </select>
 
+
                     <div class="btns">
 
                         <button class="btn" name="update">ویرایش اطلاعات </button>
-                        <button class="btn">حذف </button>
+                        <button class="btn" name="delete">حذف </button>
                         <button class="btn" name="register"> ثبت نهایی </button>
                     </div>
 
 
 
                 </form>
-               
+
 
             </div>
 
@@ -199,7 +249,7 @@ if (isset($_POST['register'])) {
         <!-- table -->
         <div class="container-bcontent">
 
-            <table class="table table-dark table-striped">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>ردیف</th>
@@ -214,34 +264,67 @@ if (isset($_POST['register'])) {
                         <th>قیمت دوره</th>
                         <th>تعداد جلسه در هفته</th>
                         <th>کل دوره</th>
+                        <th>ویرایش </th>
+                        <th>حذف </th>
+
+
 
                     </tr>
                 </thead>
                 <tbody>
                     <?php
+                    //get data from db
+
                     $id = $user_data['id'];
                     $query = "select u.*, c.*,id_Reg from users u inner join registration r on r.id  = u.id inner join courses c on c.id_Crs = r.id_Crs where u.id ='$id'";
                     $result = mysqli_query($con, $query) or die(mysqli_error($con));
-                    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                    ?>
-                        <tr class="table-dark">
-                            <td><?php echo $row['id_Reg']; ?></td>
-                            <td><?php echo $row['username']; ?></td>
-                            <td><?php echo $row['national_code']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['date_of_birth']; ?></td>
-                            <td><?php echo $row['education']; ?></td>
-                            <td><?php echo $row['date']; ?></td>
-                            <td><?php echo $row['Course_Name']; ?></td>
-                            <td><?php echo $row['Day_of_Hold']; ?></td>
-                            <td><?php echo $row['Cost']; ?></td>
-                            <td><?php echo $row['Count_of_Week']; ?></td>
-                            <td><?php echo $row['Course_of_Length']; ?></td>
+                    $num = mysqli_num_rows($result);
+                    if ($num > 0) {
+                        while ($results = mysqli_fetch_assoc($result)) {
 
-                        </tr>
-                    <?php
+                            echo "
+<tr class='table-dark'>
+<td>" . $results['id_Reg'] . "</td>
+<td>" . $results['username'] . "</td>
+<td>" . $results['national_code'] . "</td>
+<td>" . $results['email'] . "</td>
+<td>" . $results['date_of_birth'] . "</td>
+<td>" . $results['education'] . "</td>
+<td>" . $results['date'] . "</td>
+<td>" . $results['Course_Name'] . "</td>
+<td>" . $results['Day_of_Hold'] . "</td>
+<td>" . $results['Cost'] . "</td>
+<td>" . $results['Count_of_Week'] . "</td>
+<td>" . $results['Course_of_Length'] . "</td>
+<td>
+<a href='Edit.php?id=" . $results['id_Reg'] . "' class='update' ><i class='fa fa-edit'></i></a>
+</td>
+<td>
+<a href='UserPanel.php?id=" . $results['id_Reg'] . "' class='delete' ><i class='fa fa-trash'></i></a>
+</td>
+
+</tr>
+
+
+";
+                        }
                     }
+
+
+
+
+
+
+
+
+
                     ?>
+
+
+
+
+
+
                 </tbody>
             </table>
 

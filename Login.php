@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                     $user_data = mysqli_fetch_assoc($result);
 
-                    if ($user_data['password']===$password) {
+                    if ($user_data['pass']===$password) {
                         
                         $_SESSION['user_id'] =$user_data['user_id'];
                         
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -75,9 +75,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <div class="log_form_Container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <h1 class="log_title">فرم ورود</h1>
-
-
-
 
                 <label for="user">نام کاربری
 
@@ -105,12 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
     </section>
     <!--end of login form  -->
-    <section class="hero">
-        <div class="hero-inner">
-
-
-        </div>
-    </section>
+    
 
 
 </body>

@@ -9,24 +9,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //something was posted
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password =$_POST['password'];
+    $pass =$_POST['pass'];
 
 
-    if (!empty($name) && !empty($password) &&  !empty($email) && !is_numeric($name)) {
+    if (!empty($name) && !empty($pass) &&  !empty($email) && !is_numeric($name)) {
 
 
         //save to database
         $user_id = random_num(20);
 
         try {
-            $query = "insert into users (user_id,username,email,password)values('$user_id','$name','$email','$password')";
+            $query = "insert into users (user_id,username,email,pass)values('$user_id','$name','$email','$pass')";
 
 
             mysqli_query($con, $query);
             $msgsuc = "<div class='success' style='display:block;color:rgba(0, 255, 1, .9);font-size:20px;margin:5rem auto 0;text-align:center;font-weight:bold'>  اطلاعات باموفقیت ثبت شد</div>";
             echo $msgsuc;
             header("Location:Login.php");
+            exit;
         } 
+        
         catch (Exception $e) {
 
             echo 'Message: ' . $e->getMessage();
@@ -82,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <label for="password">رمز عبور
 
             </label>
-            <input type="password" name="password" id="password" value="" maxlength="8" Placeholder=" رمز عبور" required>
+            <input type="password" name="pass" id="password" value="" maxlength="8" Placeholder=" رمز عبور" required>
             
             <div class="btns">
                 <button type="submit" name="signup" class="btn register">ثبت </button>
