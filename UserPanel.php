@@ -14,10 +14,10 @@ $results = mysqli_query($con, $query);
 
 //update 
 if (isset($_GET['update'])) {
-    
-    
-     $id = $user_data['id'];
-echo $id;
+
+
+    $id = $user_data['id'];
+    echo $id;
 
 
     $query = "UPDATE users set  date_of_birth= '$_POST[date_of_birth]', education='$_POST[education]', national_code='$_POST[ncode]' where id='$id'";
@@ -63,13 +63,6 @@ if (isset($_GET['id'])) {
     header("Location:UserPanel.php");
     die;
 }
-
-
-
-
-
-
-
 
 
 
@@ -154,11 +147,11 @@ if (isset($_GET['id'])) {
         }
 
         .container-bcontent .table tbody tr.table-dark td a.update i:hover {
-        color: rgba(2, 5, 255, 0.5);
+            color: rgba(2, 5, 255, 0.5);
         }
 
         /* style btn delete in table */
-        .container-bcontent .table tbody tr.table-dark td a.delete i  {
+        .container-bcontent .table tbody tr.table-dark td a.delete i {
             color: rgba(255, 0, 0, 0.5);
             text-decoration: none;
             color: #fff;
@@ -207,9 +200,7 @@ if (isset($_GET['id'])) {
 
                     <div class="btns">
 
-                        <button class="btn" name="update">ویرایش اطلاعات </button>
-                        <button class="btn" name="delete">حذف </button>
-                        <button class="btn" name="register"> ثبت نهایی </button>
+                        <button class="btn" name="register"> ثبت نام </button>
                     </div>
 
 
@@ -248,9 +239,17 @@ if (isset($_GET['id'])) {
         </div>
         <!-- table -->
         <div class="container-bcontent">
+<?php
 
-            <table class="table">
-                <thead>
+    $id = $user_data['id'];
+    $query = "select u.*, c.*,id_Reg from users u inner join registration r on r.id  = u.id inner join courses c on c.id_Crs = r.id_Crs where u.id ='$id'";
+    $result = mysqli_query($con, $query) or die(mysqli_error($con));
+    $num = mysqli_num_rows($result);
+if ($result->num_rows > 0) {
+
+    echo '<table class="table">';
+
+    echo '<thead>
                     <tr>
                         <th>ردیف</th>
                         <th>نام کاربری</th>
@@ -270,19 +269,16 @@ if (isset($_GET['id'])) {
 
 
                     </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    //get data from db
+                </thead>';
 
-                    $id = $user_data['id'];
-                    $query = "select u.*, c.*,id_Reg from users u inner join registration r on r.id  = u.id inner join courses c on c.id_Crs = r.id_Crs where u.id ='$id'";
-                    $result = mysqli_query($con, $query) or die(mysqli_error($con));
-                    $num = mysqli_num_rows($result);
-                    if ($num > 0) {
-                        while ($results = mysqli_fetch_assoc($result)) {
+echo ' <tbody>';
+    //get data from db
 
-                            echo "
+
+    if ($num > 0) {
+        while ($results = mysqli_fetch_assoc($result)) {
+
+            echo "
 <tr class='table-dark'>
 <td>" . $results['id_Reg'] . "</td>
 <td>" . $results['username'] . "</td>
@@ -307,26 +303,19 @@ if (isset($_GET['id'])) {
 
 
 ";
-                        }
-                    }
+        }
+    }
+echo '</tbody>';
+    echo '</table>';
 
 
 
+}
 
 
 
-
-
-
-                    ?>
-
-
-
-
-
-
-                </tbody>
-            </table>
+?>
+            
 
         </div>
 
