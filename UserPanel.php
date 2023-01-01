@@ -52,6 +52,18 @@ if (isset($_POST['register'])) {
     } else {
         $message = "خطا در ثبت اطلاعات $insert." . mysqli_error($con);
     }
+    //update same time user
+
+    $id = $user_data['id'];
+    echo $id;
+
+
+    $query = "UPDATE users set  date_of_birth= '$_POST[date_of_birth]', education='$_POST[education]', national_code='$_POST[ncode]' where id='$id'";
+
+    $query_run = mysqli_query($con, $query);
+
+
+     
 }
 
 // delete from table registration
@@ -353,7 +365,7 @@ echo '</tbody>';
             " 
 <script>
 alert('فایل انتخاب شده یک عکس نیست');
-document.location.href='../Language%20Schools/UserPanel.php';
+document.location.href='UserPanel.php';
 
 
 </script>
@@ -366,7 +378,7 @@ document.location.href='../Language%20Schools/UserPanel.php';
             " 
 <script>
 alert('اندازه عکس خیلی بزرگ است');
-document.location.href='../Language%20Schools/UserPanel.php';
+document.location.href='UserPanel.php';
 
 
 </script>
@@ -384,7 +396,7 @@ document.location.href='../Language%20Schools/UserPanel.php';
 
             " 
 <script>
-document.location.href='../Language%20Schools/UserPanel.php';
+document.location.href='UserPanel.php';
 </script>
 
 ";
