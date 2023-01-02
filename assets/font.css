@@ -1,0 +1,28 @@
+@font-face {
+                font-family: IranYekan;
+                font-style: normal;
+                font-weight: bold;
+                src: url('./iranyekan/Qs_Iranyekan bold.ttf') format('woff');
+                /* All Major Browsers */
+            }
+
+             @font-face {
+                font-family: IranYekan;
+                font-style: normal;
+                font-weight: 500;
+                src: url('./iranyekan/Qs_Iranyekan medium.ttf') format('woff');
+                /* All Major Browsers */
+            }
+
+             /* iran nastaliq font face */
+
+            @font-face {
+        font-family: 'IranNastaliq';
+        src:        url('https://www.fontfarsi.ir/Content/Fonts/EOT/IranNastaliq.eot');
+        src: local('☺'),
+                    url('https://www.fontfarsi.ir/Content/Fonts/WOFF/IranNastaliq.woff') format('woff'),
+                    url('https://www.fontfarsi.ir/Content/Fonts/TTF/IranNastaliq.ttf') format('truetype'),
+                    url('https://www.fontfarsi.ir/Content/Fonts/SVG/IranNastaliq.svg') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        }

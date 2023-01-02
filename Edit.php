@@ -55,6 +55,13 @@
         } else {
             echo '<script type="text/javascript">alert(" اطلاعات ویرایش نشد   ") </script>';
         }
+        if (isset($_GET['id'])) {
+            // echo $_GET['id'];
+            $id = $_GET['id'];
+            $update = mysqli_query($con, "UPDATE registration set id_Crs='$id_crs' where id_Reg='$id'");
+            header("Location:UserPanel.php");
+            die;
+        }
 
      
 

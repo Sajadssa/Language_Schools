@@ -4,7 +4,7 @@
 
 session_start();
 require_once 'functions.php';
-require_once'Server.php';
+require_once 'Server.php';
 $user_data = check_login($con);
 
 ?>
@@ -23,6 +23,10 @@ $user_data = check_login($con);
     <link rel="stylesheet" href="style.css">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <!-- icon -->
+    <link rel="icon" href="/assets/images/Attari_pic.ico" />
+     
 
 </head>
 
@@ -68,18 +72,18 @@ $user_data = check_login($con);
     <!-- hero  -->
     <section class="hero">
         <div class="hero-inner">
-            <strong> کاربرگرامی  <?php echo $user_data['username'] ?>  </strong>
+            <strong> کاربرگرامی <?php echo $user_data['username'] ?> </strong>
             <h1>به آکادمی زبانهای خارجی هانیه خوش آمدید </h1>
             <h2>باهم و درکنارهم برای موفقیت</h2>
-          
+
 
             <a href="Login.php" class="btn">ورود</a>
-<!-- <?php  print_r($user_data) ;?> -->
+            <!-- <?php print_r($user_data); ?> -->
 
         </div>
     </section>
     <!-- end of hero -->
-  
+
 </body>
 
 </html>

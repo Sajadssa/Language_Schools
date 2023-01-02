@@ -199,7 +199,7 @@ if (isset($_GET['id'])) {
 
                     <input type="text" value="<?php echo $user_data['education'] ?>" name="education" placeholder=" تحصیلات">
                     <span>عنوان دوره آموزشی </span>
-                    <select name="id_crs" id="course" style="width:220px;color:white;font-size:14px">
+                    <select name="id_crs" id="course" style="width:220px;color:white;font-size:14px;">
                         <option value="">دوره خود را انتخاب کنید</option>
                         <?php foreach ($result as $key => $value) { ?>
 
