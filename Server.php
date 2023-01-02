@@ -5,7 +5,7 @@
 
 $dbhost="localhost";
 $dbuser = "root";
-$dbpass="";
+$dbpass="cyberlyne";
 $dbname = "language_schools";
 
 if(!$con=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname)){
