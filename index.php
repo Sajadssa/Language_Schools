@@ -26,7 +26,7 @@ $user_data = check_login($con);
 
     <!-- icon -->
     <link rel="icon" href="/assets/images/Attari_pic.ico" />
-     
+
 
 </head>
 
@@ -37,11 +37,11 @@ $user_data = check_login($con);
     <header>
         <nav class="nav_container">
 
-            <div class=" toggler">
+            <!-- <div class=" toggler">
                 <div class="bar bar-one"></div>
                 <div class="bar bar-two"></div>
                 <div class="bar bar-three"></div>
-            </div>
+            </div> -->
             <div class="logo">
 
 
@@ -72,13 +72,13 @@ $user_data = check_login($con);
     <!-- hero  -->
     <section class="hero">
         <div class="hero-inner">
-            <strong> کاربرگرامی <?php echo $user_data['username'] ?> </strong>
+            <strong> کاربرگرامی <?php echo $user_data['username'] ?> </strong> <!-- نمایش نام کاربری که وارد سایت شده -->
+
             <h1>به آکادمی زبانهای خارجی هانیه خوش آمدید </h1>
             <h2>باهم و درکنارهم برای موفقیت</h2>
 
 
             <a href="Login.php" class="btn">ورود</a>
-            <!-- <?php print_r($user_data); ?> -->
 
         </div>
     </section>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2023 at 03:04 PM
+-- Generation Time: Jan 02, 2023 at 04:58 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -68,8 +68,8 @@ CREATE TABLE `registration` (
 --
 
 INSERT INTO `registration` (`id_Reg`, `id`, `id_Crs`, `Remark`, `date`) VALUES
-(56, 6, 6, '', '2023-01-01 22:45:15'),
-(59, 4, 4, '', '2023-01-02 12:45:04');
+(66, 4, 1, '', '2023-01-02 14:56:44'),
+(67, 4, 2, '', '2023-01-02 14:56:51');
 
 -- --------------------------------------------------------
 
@@ -138,8 +138,7 @@ ALTER TABLE `courses`
 --
 ALTER TABLE `registration`
   ADD PRIMARY KEY (`id_Reg`),
-  ADD UNIQUE KEY `id_Crs` (`id_Crs`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD UNIQUE KEY `user_crs` (`id`,`id_Crs`);
 
 --
 -- Indexes for table `teachers`
@@ -175,7 +174,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `id_Reg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id_Reg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `teachers`
@@ -188,6 +187,17 @@ ALTER TABLE `teachers`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `registration`
+--
+ALTER TABLE `registration`
+  ADD CONSTRAINT `reg_crs` FOREIGN KEY (`id`) REFERENCES `courses` (`id_Crs`),
+  ADD CONSTRAINT `reg_user` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

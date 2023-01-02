@@ -18,11 +18,11 @@
     <header>
         <nav class="nav_container">
 
-            <div class=" toggler">
+            <!-- <div class=" toggler">
                 <div class="bar bar-one"></div>
                 <div class="bar bar-two"></div>
                 <div class="bar bar-three"></div>
-            </div>
+            </div> -->
             <div class="logo">
 
 
