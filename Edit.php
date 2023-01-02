@@ -40,7 +40,7 @@
 
 
         $query = "UPDATE users set username='$_POST[name]', pass='$_POST[pass]' ,email='$_POST[email]' , date_of_birth= '$_POST[date_of_birth]', education='$_POST[education]', national_code='$_POST[ncode]' where id='$id'";
-        $query1="UPDATE registration set id_Crs='$id_crs' where id_Reg='$id";
+        $query1="UPDATE registration set id_Crs='$id_crs'";
          $query_run = mysqli_query($con, $query);
         $query_run1 = mysqli_query($con, $query1);
        
