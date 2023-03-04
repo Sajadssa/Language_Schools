@@ -22,10 +22,12 @@ $user_data = check_login($con);
 
     <link rel="stylesheet" href="style.css">
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
 
     <!-- icon -->
-    <link rel="icon" href="/assets/images/Attari_pic.ico" />
+
 
 
 </head>
@@ -72,7 +74,23 @@ $user_data = check_login($con);
     <!-- hero  -->
     <section class="hero">
         <div class="hero-inner">
-            <strong> کاربرگرامی <?php echo $user_data['username'] ?> </strong> <!-- نمایش نام کاربری که وارد سایت شده -->
+            <div class="upload">
+                <?php
+                $id = $user_data['id'];
+                $name = $user_data['username'];
+                $image = $user_data['image'];
+                ?>
+                <img src="./assets/images/<?php echo $image; ?>" style=" width: 125px; height: 125px"
+                    ;title="<?php echo $image; ?>" alt="عکس موچود نیست">
+                <div class="round">
+                    <!-- <input type="text" name="id" value="<?php echo $id; ?>"> -->
+                    <input type="hidden" name="name" value="<?php echo $name; ?>">
+                    <!-- <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png"> -->
+                    <!-- <i class="fa fa-camera" style="color:#fff"></i> -->
+                </div>
+            </div>
+            <strong> کاربرگرامی <?php echo $user_data['username'] ?> </strong>
+            <!-- نمایش نام کاربری که وارد سایت شده -->
 
             <h1>به آکادمی زبانهای خارجی هانیه خوش آمدید </h1>
             <h2>باهم و درکنارهم برای موفقیت</h2>

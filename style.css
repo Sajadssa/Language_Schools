@@ -30,14 +30,7 @@ body {
   box-sizing: border-box;
 
   outline-style: none;
-  /* background-color: #111927;
-  background-image: radial-gradient(
-      at 47% 33%,
-      hsl(162.55, 40%, 46%) 0,
-      transparent 59%
-    ),
-    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 70%);
-  background-repeat: no-repeat; */
+  
   overflow-x: hidden;
   /* Background styles */
   background-image: linear-gradient(
@@ -85,7 +78,7 @@ body {
 }
 /* آیتم های  لینک منو پیمایش */
 .nav_link .nav_item {
-  padding: 0 1rem;
+ 
   float: right;
   font-size: 16px;
   color: white;
