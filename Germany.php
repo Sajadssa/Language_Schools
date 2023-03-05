@@ -16,6 +16,7 @@
     <section class="hero">
         <div class="hero-inner">
             <h1>دوره های زبان آلمانی</h1>
+            <!--  germany course-->
 
             <!-- table -->
             <div class="container-bcontent">
@@ -38,14 +39,14 @@
                         $result = mysqli_query($con, $query) or die(mysqli_error($con));
                         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                         ?>
-                            <tr class="table-dark">
-                                <td><?php echo $row['id_Crs']; ?></td>
-                                <td><?php echo $row['Course_Name']; ?></td>
-                                <td><?php echo $row['Day_of_Hold']; ?></td>
-                                <td><?php echo $row['Cost']; ?></td>
-                                <td><?php echo $row['Count_of_Week']; ?></td>
-                                <td><?php echo $row['Course_of_Length']; ?></td>
-                            </tr>
+                        <tr class="table-dark">
+                            <td><?php echo $row['id_Crs']; ?></td>
+                            <td><?php echo $row['Course_Name']; ?></td>
+                            <td><?php echo $row['Day_of_Hold']; ?></td>
+                            <td><?php echo $row['Cost']; ?></td>
+                            <td><?php echo $row['Count_of_Week']; ?></td>
+                            <td><?php echo $row['Course_of_Length']; ?></td>
+                        </tr>
                         <?php
                         }
                         ?>
