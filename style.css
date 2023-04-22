@@ -677,3 +677,50 @@ flex-direction: column;
 .map{
   border-radius: 5px;
 }
+
+/* استایل فرم زرین پال */
+
+    form {
+        border: 1px solid rgba(17, 25, 40, 0.3);
+        border-radius: 7px;
+        padding:0 10px;
+        width: 400px;
+        margin:6rem auto;
+        color:#f2dede;
+    }
+
+    form input{
+color:#f2dede;
+       display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+   backdrop-filter: blur(11px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  background-color: rgba(17, 25, 40, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  margin:1rem auto 0;
+   
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  border-radius: 7px;
+  z-index: 1;
+  
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+

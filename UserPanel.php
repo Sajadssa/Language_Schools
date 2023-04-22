@@ -94,89 +94,89 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-        .upload {
-            width: 125px;
-            position: relative;
-            margin: auto;
+    .upload {
+        width: 125px;
+        position: relative;
+        margin: auto;
 
 
-        }
+    }
 
-        .upload img {
+    .upload img {
 
-            border: 8px solid #dcdcdc;
-            border-radius: 50%;
+        border: 8px solid #dcdcdc;
+        border-radius: 50%;
 
-        }
+    }
 
-        .upload .round {
-            position: absolute;
-            background-color: whitesmoke;
+    .upload .round {
+        position: absolute;
+        background-color: whitesmoke;
 
-            bottom: .2rem;
+        bottom: .2rem;
 
-            right: .1rem;
-            width: 32px;
-            height: 32px;
-            line-height: 33px;
-            text-align: center;
-            border-radius: 50%;
-            overflow: hidden;
-
-
+        right: .1rem;
+        width: 32px;
+        height: 32px;
+        line-height: 33px;
+        text-align: center;
+        border-radius: 50%;
+        overflow: hidden;
 
 
-        }
 
 
-        .upload .round input[type="file"] {
-            position: absolute;
+    }
 
-            transform: scale(3);
-            opacity: 1;
-            cursor: pointer;
-        }
 
-        .fa-camera {
-            width: 50px;
-            position: absolute;
-            top: 0;
-            transform: translate(50%, 50%);
-            z-index: 1;
-            cursor: pointer;
+    .upload .round input[type="file"] {
+        position: absolute;
 
-        }
+        transform: scale(3);
+        opacity: 1;
+        cursor: pointer;
+    }
 
-        .container-bcontent .table tbody tr.table-dark td a.update i {
-            color: rgba(46, 25, 78, 0.5);
-            text-decoration: none;
-            color: var(--mainWhite);
-            padding: 0.5rem;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 14px;
-            transition: .4s ease-in-out;
-        }
+    .fa-camera {
+        width: 50px;
+        position: absolute;
+        top: 0;
+        transform: translate(50%, 50%);
+        z-index: 1;
+        cursor: pointer;
 
-        .container-bcontent .table tbody tr.table-dark td a.update i:hover {
-            color: rgba(2, 5, 255, 0.5);
-        }
+    }
 
-        /* style btn delete in table */
-        .container-bcontent .table tbody tr.table-dark td a.delete i {
-            color: rgba(255, 0, 0, 0.5);
-            text-decoration: none;
-            color: #fff;
-            padding: 0.5rem;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 14px;
-            transition: .4s ease-in-out;
-        }
+    .container-bcontent .table tbody tr.table-dark td a.update i {
+        color: rgba(46, 25, 78, 0.5);
+        text-decoration: none;
+        color: var(--mainWhite);
+        padding: 0.5rem;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 14px;
+        transition: .4s ease-in-out;
+    }
 
-        .container-bcontent .table tbody tr.table-dark td a.delete i:hover {
-            color: crimson;
-        }
+    .container-bcontent .table tbody tr.table-dark td a.update i:hover {
+        color: rgba(2, 5, 255, 0.5);
+    }
+
+    /* style btn delete in table */
+    .container-bcontent .table tbody tr.table-dark td a.delete i {
+        color: rgba(255, 0, 0, 0.5);
+        text-decoration: none;
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 14px;
+        transition: .4s ease-in-out;
+    }
+
+    .container-bcontent .table tbody tr.table-dark td a.delete i:hover {
+        color: crimson;
+    }
     </style>
 </head>
 
@@ -188,22 +188,27 @@ if (isset($_GET['id'])) {
 
             <div class="div">
 
-                <form action="UserPanel.php" class="userinfo" method="post">
-                    <input type="text" value="<?php echo $user_data['username'] ?>" name="name" placeholder="نام کاربری">
+                <form action="ZarinpalApi.php" class="userinfo" method="post">
+                    <input type="text" value="<?php echo $user_data['username'] ?>" name="name"
+                        placeholder="نام کاربری">
 
-                    <input type="email" value="<?php echo $user_data['email'] ?>" name="email" placeholder="پست الکترونیکی">
-                    <input type="text" value="<?php echo $user_data['national_code'] ?>" name="ncode" placeholder="کد ملی ">
+                    <input type="email" value="<?php echo $user_data['email'] ?>" name="email"
+                        placeholder="پست الکترونیکی">
+                    <input type="text" value="<?php echo $user_data['national_code'] ?>" name="ncode"
+                        placeholder="کد ملی ">
 
 
-                    <input type="text" value="<?php echo $user_data['date_of_birth'] ?>" name="date_of_birth" placeholder="تاریخ تولد">
+                    <input type="text" value="<?php echo $user_data['date_of_birth'] ?>" name="date_of_birth"
+                        placeholder="تاریخ تولد">
 
-                    <input type="text" value="<?php echo $user_data['education'] ?>" name="education" placeholder=" تحصیلات">
+                    <input type="text" value="<?php echo $user_data['education'] ?>" name="education"
+                        placeholder=" تحصیلات">
                     <span>عنوان دوره آموزشی </span>
                     <select name="id_crs" id="course" style="width:220px;color:white;font-size:14px;">
                         <option value="">دوره خود را انتخاب کنید</option>
                         <?php foreach ($result as $key => $value) { ?>
 
-                            <option value="<?= $value['id_Crs']; ?>"><?= $value['Course_Name']; ?></option>
+                        <option value="<?= $value['id_Crs']; ?>"><?= $value['Course_Name']; ?></option>
 
 
                         <?php } ?>
@@ -212,7 +217,14 @@ if (isset($_GET['id'])) {
 
                     <div class="btns">
 
-                        <button class="btn" name="register"> ثبت نام </button>
+                        <!-- <button class="btn" name="register"> ثبت نام </button> -->
+                        <button class="btn" name="register" onclick="redirectToZarinpalapi()">ثبت نام</button>
+                        <script>
+                        function redirectToZarinpalapi(event) {
+                            event.preventDefault();
+                            window.location.href = "ZarinuserpalApi.php";
+                        }
+                        </script>
                     </div>
 
 
@@ -231,7 +243,8 @@ if (isset($_GET['id'])) {
                         $name = $user_data['username'];
                         $image = $user_data['image'];
                         ?>
-                        <img src="./assets/images/<?php echo $image; ?>" style=" width: 125px; height: 125px" ;title="<?php echo $image; ?>" alt="عکس موچود نیست">
+                        <img src="./assets/images/<?php echo $image; ?>" style=" width: 125px; height: 125px"
+                            ;title="<?php echo $image; ?>" alt="عکس موچود نیست">
                         <div class="round">
                             <input type="text" name="id" value="<?php echo $id; ?>">
                             <input type="hidden" name="name" value="<?php echo $name; ?>">
@@ -251,7 +264,7 @@ if (isset($_GET['id'])) {
         </div>
         <!-- table -->
         <div class="container-bcontent">
-<?php
+            <?php
 
     $id = $user_data['id'];
     $query = "select u.*, c.*,id_Reg from users u inner join registration r on r.id  = u.id inner join courses c on c.id_Crs = r.id_Crs where u.id ='$id'";
@@ -327,17 +340,17 @@ echo '</tbody>';
 
 
 ?>
-            
+
 
         </div>
 
     </section>
 
     <script>
-        document.getElementById('image').onchange = function() {
+    document.getElementById('image').onchange = function() {
 
-            document.getElementById('form').submit();
-        }
+        document.getElementById('form').submit();
+    }
     </script>
     <!-- php code after select photo -->
 
