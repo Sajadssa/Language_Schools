@@ -3,9 +3,10 @@ session_start();
 include 'Server.php'; //افزودن کدهای مربوط به اتصال به دیتابیس
 include 'functions.php';
 include 'NavBar.php';
+
 $msg = "";
 $msgsuc = "";
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if (isset($_POST['register'])) {
     //something was posted
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -17,9 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         //save to database
         $user_id = random_num(20);
+     
 
         try {
-            $query = "insert into users (user_id,username,email,pass)values('$user_id','$name','$email','$pass')";
+            $query = "insert into users (user_id,username,email,pass) values ('$user_id','$name','$email','$pass')";
 
 
             mysqli_query($con, $query);
@@ -65,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <!-- Registration form-->
 
     <div class="reg_form_Container">
-        <form   method="post">
+        <form method="post">
 
             <h1 class="reg_title">فرم عضویت در سایت</h1>
 
@@ -73,21 +75,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             </label>
             <input type="text" name="name" id="user" Placeholder="نام کاربری" required>
-             
+
 
             <label for="email">پست الکترونیکی
 
             </label>
             <input type="email" name="email" id="email" Placeholder="پست الکترونیکی" required>
-             
+
 
             <label for="password">رمز عبور
 
             </label>
             <input type="password" name="pass" id="password" value="" maxlength="8" Placeholder=" رمز عبور" required>
-            
+
             <div class="btns">
-                <button type="submit" name="signup" class="btn register">ثبت </button>
+                <button type="submit" name="register" class="btn register">ثبت </button>
                 <p style="color:white; display:flex; align-items:center; " class="reg_form_desc">
                     کاربر وجود دارد؟
                     <a href="Login.php" style="color:aqua;margin-right:.5rem;margin-bottom:.4rem"><b>ورود</b></a>
